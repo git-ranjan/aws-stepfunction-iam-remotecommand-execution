@@ -1,0 +1,13 @@
+{
+    "Comment": "Remote EC2 Command Execution via SSM",
+    "StartAt": "RunSSMCommand",
+    "States": {
+      "RunSSMCommand": {
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:us-west-2:730335458576:function:lambda-step-function",
+        "InputPath": "$",
+        "ResultPath": "$.ssmResult",
+        "End": true
+      }
+    }
+  }
